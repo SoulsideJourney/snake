@@ -1,1 +1,6 @@
 C:\Users\Soulside Journey\Google Диск\Projects\Snake\Snake\bin\Debug\Snake.exe.config
+C:\Users\Soulside Journey\Downloads\snake\Snake\Snake\bin\Debug\Snake.exe.config
+C:\Users\Soulside Journey\Downloads\snake\Snake\Snake\bin\Debug\Snake.exe
+C:\Users\Soulside Journey\Downloads\snake\Snake\Snake\bin\Debug\Snake.pdb
+C:\Users\Soulside Journey\Downloads\snake\Snake\Snake\obj\Debug\Snake.exe
+C:\Users\Soulside Journey\Downloads\snake\Snake\Snake\obj\Debug\Snake.pdb
