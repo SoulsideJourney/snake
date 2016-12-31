@@ -4,3 +4,4 @@ C:\Users\Soulside Journey\Downloads\snake\Snake\Snake\bin\Debug\Snake.exe
 C:\Users\Soulside Journey\Downloads\snake\Snake\Snake\bin\Debug\Snake.pdb
 C:\Users\Soulside Journey\Downloads\snake\Snake\Snake\obj\Debug\Snake.exe
 C:\Users\Soulside Journey\Downloads\snake\Snake\Snake\obj\Debug\Snake.pdb
+C:\Users\Soulside Journey\Downloads\snake\Snake\Snake\obj\Debug\Snake.csprojResolveAssemblyReference.cache
