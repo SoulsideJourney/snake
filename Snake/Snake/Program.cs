@@ -20,15 +20,28 @@ namespace Snake
 
             //И вот создал Бох Вселенную, Эа Сущую
             Console.CursorVisible = false;
-            //int h = Console.BufferHeight;
-            // w = Console.BufferWidth;
+            
+            while (true)
+            {
+                RefreshArea();
+                StartGame();
+            }
+            
+        }
+
+        static void RefreshArea()
+        {
+            Console.Clear();
             Console.SetWindowSize(80, 25);
             Console.SetBufferSize(80, 25);
 
             //Потом создал он великие Стены
             walls = new Walls(80, 25);
             walls.Draw();
+        }
 
+        static void StartGame() //Потом создал Бох время 
+        {
             //Потом первую живую тварь
             Point p = new Point(4, 5, '*');
             snake = new Snake(p, 4, Direction.RIGHT);
@@ -39,11 +52,6 @@ namespace Snake
             food = foodCreator.CreateFood();
             food.Draw();
 
-            StartTime();                    
-        }
-
-        static void StartTime() //Потом создал Бох время 
-        {
             while (true)
             {
                 if (walls.IsHit(snake) || snake.IsHitTail())
@@ -51,6 +59,7 @@ namespace Snake
                     Console.SetCursorPosition(36, 12);
                     Console.WriteLine("СМЭРТЬ");
                     Console.ReadKey();
+                    //StartGame();
                     break;
                 }
 
