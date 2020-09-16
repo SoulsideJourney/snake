@@ -9,6 +9,7 @@ namespace Snake
 {
     class Program
     {
+        int sleepTime = 100;
         static Walls walls;
         static Snake snake;
         static Point food;
@@ -32,6 +33,7 @@ namespace Snake
         static void RefreshArea()
         {
             Console.Clear();
+            Console.ResetColor();
             Console.SetWindowSize(80, 25);
             Console.SetBufferSize(80, 25);
 
@@ -45,6 +47,7 @@ namespace Snake
             //Потом первую живую тварь
             Point p = new Point(4, 5, '*');
             snake = new Snake(p, 4, Direction.RIGHT);
+            Console.ForegroundColor = ConsoleColor.Green;
             snake.Draw();
 
             //Потом первую еду, ибо хотела тварь вкушать пищу
@@ -65,7 +68,7 @@ namespace Snake
 
                 if (snake.Eat(food))
                 {
-                    Console.ForegroundColor = ConsoleColor.Cyan;    //Цвет еды
+                    //Console.ForegroundColor = ConsoleColor.Cyan;    //Цвет еды
                     food = foodCreator.CreateFood();
                     food.Draw();
                     Console.ForegroundColor = ConsoleColor.White;   //Цвет всего остального

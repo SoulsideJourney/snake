@@ -29,6 +29,7 @@ namespace Snake
             pList.Add(head);
 
             tail.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
             head.Draw();
         }
         public Point GetNextPoint()
