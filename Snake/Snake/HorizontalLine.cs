@@ -13,7 +13,7 @@ namespace Snake
             pList = new List<Point>();
             for (int x = xLeft; x <= xRight; x++)
             {
-                Point p = new Point(x, y, sym);
+                Point p = new Point(x, y, sym, ConsoleColor.White);
                 pList.Add(p);
             }
             /*Point p1 = new Point(3, 4, '*');

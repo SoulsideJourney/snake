@@ -15,6 +15,12 @@ namespace Snake
                 p.Draw();
         }
 
+        public void Draw(ConsoleColor color)
+        {
+            foreach (Point p in pList)
+                p.Draw(color);
+        }
+
         internal bool IsHit(Figure figure)
         {
             foreach(var p in pList)

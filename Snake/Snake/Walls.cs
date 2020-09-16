@@ -35,11 +35,20 @@ namespace Snake
             }
             return false;
         }
+
         public void Draw()
         {
             foreach(var wall in wallList)
             {
                 wall.Draw();
+            }
+        }
+
+        public void Draw(ConsoleColor color)
+        {
+            foreach (var wall in wallList)
+            {
+                wall.Draw(color);
             }
         }
     }

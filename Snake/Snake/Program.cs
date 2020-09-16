@@ -9,7 +9,7 @@ namespace Snake
 {
     class Program
     {
-        int sleepTime = 100;
+        static int sleepTime = 100;
         static Walls walls;
         static Snake snake;
         static Point food;
@@ -47,19 +47,20 @@ namespace Snake
             //Потом первую живую тварь
             Point p = new Point(4, 5, '*');
             snake = new Snake(p, 4, Direction.RIGHT);
-            Console.ForegroundColor = ConsoleColor.Green;
-            snake.Draw();
+            //Console.ForegroundColor = ConsoleColor.Green;
+            snake.Draw(ConsoleColor.Green);
 
             //Потом первую еду, ибо хотела тварь вкушать пищу
             foodCreator = new FoodCreator(80, 25, '$');
             food = foodCreator.CreateFood();
-            food.Draw();
+            food.Draw(food.color);
 
             while (true)
             {
                 if (walls.IsHit(snake) || snake.IsHitTail())
                 {
                     Console.SetCursorPosition(36, 12);
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("СМЭРТЬ");
                     Console.ReadKey();
                     //StartGame();
@@ -70,11 +71,12 @@ namespace Snake
                 {
                     //Console.ForegroundColor = ConsoleColor.Cyan;    //Цвет еды
                     food = foodCreator.CreateFood();
-                    food.Draw();
-                    Console.ForegroundColor = ConsoleColor.White;   //Цвет всего остального
+                    food.Draw(food.color);
+                    if (sleepTime > 10) sleepTime -= 5;
+                    //Console.ForegroundColor = ConsoleColor.White;   //Цвет всего остального
                 }
                 else snake.Move(); //И вот приказал Он своей твари бесконечно бегать среди Великих стен, ибо хз че ещё делать
-                Thread.Sleep(100);
+                Thread.Sleep(sleepTime);
 
                 if (Console.KeyAvailable)
                 {
