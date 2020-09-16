@@ -13,7 +13,7 @@ namespace Snake
         static Walls walls;
         static Snake snake;
         static Point food;
-        static FoodCreator foodCreator;
+        static FoodCreator foodCreator = new FoodCreator(80, 25, '$');
 
         static void Main(string[] args)
         {
@@ -44,14 +44,10 @@ namespace Snake
 
         static void StartGame() //Потом создал Бох время 
         {
-            //Потом первую живую тварь
-            Point p = new Point(4, 5, '*');
-            snake = new Snake(p, 4, Direction.RIGHT);
-            //Console.ForegroundColor = ConsoleColor.Green;
-            snake.Draw(ConsoleColor.Green);
-
+            ////Потом первую живую тварь
+            snake = Snake.CreateNewSnake();
+            
             //Потом первую еду, ибо хотела тварь вкушать пищу
-            foodCreator = new FoodCreator(80, 25, '$');
             food = foodCreator.CreateFood();
             food.Draw(food.color);
 

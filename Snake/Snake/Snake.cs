@@ -86,5 +86,13 @@ namespace Snake
             }
             else return false;
         }
+
+        public static Snake CreateNewSnake()
+        {
+            Point p = new Point(4, 5, '*');
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Draw(ConsoleColor.Green);
+            return snake;
+        }
     }
 }
